@@ -1,6 +1,6 @@
 title: How to write Static Site Generators?
-date: 07 March 2019
-slug: how-to-write-ssg
+date: 08 March 2019
+slug: index1
 summary: A static website generator combines a markup language, such as Markdown or reStructuredText, with a templating engine such as Jinja, to produce HTML files. The HTML files can be hosted and served by a web server or content delivery network (CDN) without any additional dependencies such as a WSGI server.
 
 ###Why are static site generators useful?

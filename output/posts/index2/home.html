@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>  </title>
+  </head>
+  <body>
+  <div class="container">
+      <h1>Recent Posts</h1>
+  </div>
+    <div class="container">
+
+
+        
+    <h1>How to write Static Site Generators?</h1>
+    <p>06 March 2019</p>
+    <h3>Why are static site generators useful?</h3>
+
+<p>Static content files such as HTML, CSS and JavaScript can be served from a content delivery network (CDN) for high scale and low cost. If a statically generated website is hit by high concurrent traffic it will be easily served by the CDN without dropped connections.</p>
+
+<p>For example, when Full Stack Python was on the top of Hacker News for a weekend, GitHub Pages was used as a CDN to serve the site and didn't have any issues even with close to 400 concurrent connections at a time, as shown in the following Google Analytics screenshot captured during that traffic burst.</p>
+
+<h3>How do static website generators work?</h3>
+
+<p>Static site generators allow a user to create HTML files by writing in a markup language and coding template files. The static site generator then combines the markup language and templates to produce HTML. The output HTML does not need to be maintained by hand because it is regenerated every time the markup or templates are modified.</p>
+
+<p>For example, as shown in the diagram below, the Pelican static site generator can take in reStructuredText files and Jinja2 template files as input then combine them to output a set of static HTML files.</p>
+
+<h3>Python implementations</h3>
+
+<p>Numerous static website generators exist in many different languages. The ones listed here are primarily coded in Python.</p>
+
+<ul>
+<li><p>Pelican is a commonly used Python static website generator which is used to create Full Stack Python. The primary templating engine is Jinja and Markdown, reStructuredText and AsciiDoc are supported with the default configuration.</p></li>
+<li><p>Lektor is a static content management system and site generator that can deploy its output to any webserver. It uses Jinja2 as its template engine.</p></li>
+<li><p>MkDocs uses a YAML configuration file to take Markdown files and an optional theme to output a documentation site. The templating engine is Jinja, but a user doesn't have to create her own templates unless a custom site is desired at which point it might make more sense to use a different static site generator instead.</p></li>
+<li><p>mynt (source code) is built to create blogs and uses Jinja to generate HTML pages.</p></li>
+<li><p>Nikola (source code) takes in reStructuredText, Markdown or Jupyter (IPython) Notebooks and combines the files with Mako or Jinja2 templates to output static sites. It is compatible with both Python 2.7 and 3.3+. Python 2.7 will be dropped in early 2016 while Python 3.3+ will continue to be supported.</p></li>
+<li><p>Acrylamid (source code) uses incremental builds to generate static sites faster than recreating every page after each change is made to the input files.</p></li>
+<li><p>Hyde (source code) started out as a Python rewrite of the popular Ruby-based Jekyll static site generator. Today the project has moved past those "clone Jekyll" origins. Hyde supports Jinja as well as other templating languages and places more emphasis on metadata within the markup files to instruct the generator how to produce the output files. Check out the Hyde-powered websites page to see live examples created with Hyde.</p></li>
+<li><p>Grow SDK (source code) uses projects, known as pods, which contain a specific file and directory structure so the site can be generated. The project remains in the "experimental" phase.</p></li>
+<li><p>Complexity (source code) is a site generator for users who like to work in HTML. It uses HTML for templating but has some functionality from Jinja for inheritance. Works with Python 2.6+, 3.3+ and PyPy.</p></li>
+<li><p>Cactus (source code) uses the Django templating engine that was originally built with front-end designers in mind. It works with both Python 2.x and 3.x.</p></li>
+</ul>
+
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

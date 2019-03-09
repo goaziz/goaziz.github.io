@@ -30,35 +30,33 @@ def generate_html(files):
             posts[file] = md(f.read(), extras=['metadata'])
 
     posts = {
-        post: posts[post] for post in sorted(posts, key=lambda post: datetime.strptime(posts[post].metadata['date'], '%Y-%m-%d'), reverse=True)
+        post: posts[post] for post in sorted(posts, key=lambda post: datetime.strptime(posts[post].metadata['date'], '%d %B %Y'), reverse=True)
     }
 
     env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
     home_template = env.get_template('home.html')
     post_template = env.get_template('post-detail.html')
 
-    index_posts_metadata = [posts[post].metadata for post in posts]
-
-    index_html_content = home_template.render(posts=index_posts_metadata)
+    home_post_data = [posts[post].metadata for post in posts]
+    home_content = home_template.render(posts=home_post_data)
 
 
     with open(os.path.join(OUTPUT_DIR, 'home.html'), 'w') as f:
-        f.write(index_html_content)
+        f.write(home_content)
 
-    # print(index_html_content)
 
     for post in posts:
-        post_metadata = posts[post].metadata
+        post_data = posts[post].metadata
 
-        post_data = {
+        posts_data = {
             'content': posts[post],
-            'title': post_metadata['title'],
-            'date': post_metadata['date'],
+            'title': post_data['title'],
+            'date': post_data['date'],
         }
 
-        post_html_content = post_template.render(post=post_data)
+        post_html_content = post_template.render(post=posts_data)
 
-        post_file_path = 'output/posts/{slug}/home.html'.format(slug=post_metadata['slug'])
+        post_file_path = 'output/posts/{slug}/home.html'.format(slug=post_data['slug'])
 
         os.makedirs(os.path.dirname(post_file_path), exist_ok=True)
         with open(post_file_path, 'w') as file:
