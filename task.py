@@ -34,14 +34,14 @@ def generate_html(files):
     }
 
     env = Environment(loader=FileSystemLoader(TEMPLATES_DIR))
-    home_template = env.get_template('home.html')
+    home_template = env.get_template('index.html')
     post_template = env.get_template('post-detail.html')
 
     home_post_data = [posts[post].metadata for post in posts]
     home_content = home_template.render(posts=home_post_data)
 
 
-    with open(os.path.join(OUTPUT_DIR, 'home.html'), 'w') as f:
+    with open(os.path.join(OUTPUT_DIR, 'index.html'), 'w') as f:
         f.write(home_content)
 
 
@@ -56,7 +56,7 @@ def generate_html(files):
 
         post_html_content = post_template.render(post=posts_data)
 
-        post_file_path = 'output/posts/{slug}/home.html'.format(slug=post_data['slug'])
+        post_file_path = 'output/posts/{slug}/index.html'.format(slug=post_data['slug'])
 
         os.makedirs(os.path.dirname(post_file_path), exist_ok=True)
         with open(post_file_path, 'w') as file:
